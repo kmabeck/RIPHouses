@@ -219,8 +219,7 @@
 			
 	      }
 	      if (positions && positions.length > 10) {
-	        const width = 100%;
-			const height = 100%;
+	      
 			//const width = distance(positions[15], positions[19]) * 1.1;
 	        //const height = distance(positions[53], positions[20]) * 1.15;
 	        const y = positions[20][1] - (0.2 * height);
