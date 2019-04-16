@@ -218,7 +218,7 @@
 	        image.src = 'OldBoylston.png';
 			
 	      }
-	      if (positions && positions.length > 10) {
+	      if (positions && positions.length > 20) {
 	      
 			const width = distance(positions[15], positions[19]) * 1.1;
 	        const height = distance(positions[53], positions[20]) * 1.15;
@@ -232,7 +232,7 @@
 	        // tan = opposite / adjacent
 	       // const angle = Math.atan(opposite / adjacent);
 	        try {
-	         // ctx.translate(x, y);
+	          ctx.translate(x, y);
 	         // ctx.rotate(angle);
 	          ctx.drawImage(image, 0, 0, width, height);
 	         // ctx.rotate(-angle);
