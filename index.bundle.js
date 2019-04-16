@@ -219,10 +219,10 @@
 			
 	      }
 	      if (positions && positions.length > 50) {
-	       // const width = distance(positions[15], positions[19]) * 1.1;
-	        //const height = distance(positions[53], positions[20]) * 1.15;
-	        //const y = positions[20][1] - (0.2 * height);
-	       // const x = positions[19][0];
+	        const width = distance(positions[15], positions[19]) * 1.1;
+	        const height = distance(positions[53], positions[20]) * 1.15;
+	        const y = positions[20][1] - (0.2 * height);
+	        const x = positions[19][0];
 	        // Calculate the angle to draw by looking at the position of the eyes
 	        // The opposite side is the difference in y
 	       // const opposite = positions[32][1] - positions[27][1];
@@ -12666,6 +12666,8 @@
 
 /***/ }),
 /* 21 */
+	
+	var constraints = { video: { facingMode: "environment" }, audio: false };
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
