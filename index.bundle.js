@@ -214,7 +214,7 @@
 	      }
 	      if (!image) {
 	        image = document.createElement('img');
-	        image.src = 'comedy-glasses.png';
+	        image.src = 'OldBoylston.png';
 			
 	      }
 	      if (positions && positions.length > 20) {
