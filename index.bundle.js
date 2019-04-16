@@ -47,7 +47,7 @@
 	/* global OT config */
 	// A real app would use require('opentok-filters/src/filters.js');
 	const filters = __webpack_require__(1);
-	var constraints = { video: { facingMode: "environment" }, audio: false };
+	//var constraints = { video: { facingMode: "environment" }, audio: false };
 	
 	const captureButton = __webpack_require__(6);
 	const filterPicker = __webpack_require__(20);
