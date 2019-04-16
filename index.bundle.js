@@ -217,18 +217,18 @@
 	        image.src = 'OldBoylston.png';
 			
 	      }
-	      if (positions && positions.length > 20) {
+	      if (positions && positions.length > 50) {
 	        const width = distance(positions[15], positions[19]) * 1.1;
 	        const height = distance(positions[53], positions[20]) * 1.15;
-	        const y = positions[20][1] - (0.2 * height);
-	        const x = positions[19][0];
+	        //const y = positions[20][1] - (0.2 * height);
+	       // const x = positions[19][0];
 	        // Calculate the angle to draw by looking at the position of the eyes
 	        // The opposite side is the difference in y
-	        const opposite = positions[32][1] - positions[27][1];
+	       // const opposite = positions[32][1] - positions[27][1];
 	        // The adjacent side is the difference in x
-	        const adjacent = positions[32][0] - positions[27][0];
+	        //const adjacent = positions[32][0] - positions[27][0];
 	        // tan = opposite / adjacent
-	        const angle = Math.atan(opposite / adjacent);
+	       // const angle = Math.atan(opposite / adjacent);
 	        try {
 	         // ctx.translate(x, y);
 	         // ctx.rotate(angle);
