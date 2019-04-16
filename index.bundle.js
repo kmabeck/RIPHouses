@@ -226,17 +226,17 @@
 	        const x = positions[19][0];
 	        // Calculate the angle to draw by looking at the position of the eyes
 	        // The opposite side is the difference in y
-	       // const opposite = positions[32][1] - positions[27][1];
+	        const opposite = positions[32][1] - positions[27][1];
 	        // The adjacent side is the difference in x
-	        //const adjacent = positions[32][0] - positions[27][0];
-	        // tan = opposite / adjacent
-	       // const angle = Math.atan(opposite / adjacent);
+	        const adjacent = positions[32][0] - positions[27][0];
+	         tan = opposite / adjacent
+	        const angle = Math.atan(opposite / adjacent);
 	        try {
 	          ctx.translate(x, y);
-	         // ctx.rotate(angle);
+	          ctx.rotate(angle);
 	          ctx.drawImage(image, 0, 0, width, height);
-	         // ctx.rotate(-angle);
-	         // ctx.translate(-x, -y);
+	          ctx.rotate(-angle);
+	          ctx.translate(-x, -y);
 	        } catch (err) {
 	          console.error(err); // eslint-disable-line
 	        }
