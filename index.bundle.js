@@ -223,8 +223,8 @@
 			const height = 100%;
 			//const width = distance(positions[15], positions[19]) * 1.1;
 	        //const height = distance(positions[53], positions[20]) * 1.15;
-	        //const y = positions[20][1] - (0.2 * height);
-	        //const x = positions[19][0];
+	        const y = positions[20][1] - (0.2 * height);
+	        const x = positions[19][0];
 	        // Calculate the angle to draw by looking at the position of the eyes
 	        // The opposite side is the difference in y
 	       // const opposite = positions[32][1] - positions[27][1];
