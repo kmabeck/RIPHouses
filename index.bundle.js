@@ -230,11 +230,11 @@
 	        // tan = opposite / adjacent
 	        const angle = Math.atan(opposite / adjacent);
 	        try {
-	          ctx.translate(x, y);
-	          ctx.rotate(angle);
+	         // ctx.translate(x, y);
+	         // ctx.rotate(angle);
 	          ctx.drawImage(image, 0, 0, width, height);
-	          ctx.rotate(-angle);
-	          ctx.translate(-x, -y);
+	         // ctx.rotate(-angle);
+	         // ctx.translate(-x, -y);
 	        } catch (err) {
 	          console.error(err); // eslint-disable-line
 	        }
