@@ -58,6 +58,7 @@
 	navigator.mediaDevices.getUserMedia({
 	  audio: true,
 	  video: true,
+	  facingMode: "environment",
 	}).then(stream => {
 	  videoElement = document.createElement('video');
 	  videoElement.srcObject = stream;
@@ -12668,7 +12669,6 @@
 /***/ }),
 /* 21 */
 	
-	//var constraints = { video: { facingMode: "environment" }, audio: false };
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
