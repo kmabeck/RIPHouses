@@ -1,4 +1,5 @@
-/******/ (function(modules) { // webpackBootstrap
+/******/ 
+			(function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -15,6 +16,7 @@
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
+				
 /******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
@@ -48,7 +50,9 @@
 	// A real app would use require('opentok-filters/src/filters.js');
 	const filters = __webpack_require__(1);
 	//var constraints = { video: { facingMode: "environment" }, audio: false };
+	var constraints = { video: { facingMode: "user"}};
 	
+					   
 	const captureButton = __webpack_require__(6);
 	const filterPicker = __webpack_require__(20);
 	
@@ -64,7 +68,7 @@
 	  videoElement.srcObject = stream;
 	  videoElement.muted = true;
 	  videoElement.setAttribute('playsinline', '');
-	  videoElement.facingMode = 'environment';
+	  //videoElement.facingMode = 'environment';
 	  setTimeout(() => {
 	    videoElement.play();
 	  });
