@@ -59,7 +59,7 @@
 	const canvas = document.createElement('canvas');
 	
 	let videoElement;
-	navigator.mediaDevices.getUserMedia({
+	navigator.mediaDevices.getUserMedia(constraints){
 	  audio: true,
 	  video: true,
 	  //facingMode: "environment",
