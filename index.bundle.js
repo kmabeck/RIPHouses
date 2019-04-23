@@ -63,14 +63,11 @@
 	navigator.mediaDevices.getUserMedia({
 	  audio: true,
 	  video: true,
-	  //constraints: true;
-	  //facingMode: "environment",
 	}).then(stream => {
 	  videoElement = document.createElement('video');
 	  videoElement.srcObject = stream;
 	  videoElement.muted = true;
 	  videoElement.setAttribute('playsinline', '');
-	  //videoElement.facingMode = 'environment';
 	  setTimeout(() => {
 	    videoElement.play();
 	  });
