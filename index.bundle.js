@@ -58,14 +58,14 @@
 	
 	const canvas = document.createElement('canvas');
 	
-	let constraints = { video: { facingMode: "environment" }, audio: true, };
+	//let constraints = { video: { facingMode: "environment" }, audio: true, };
 	let videoElement;
-	navigator.mediaDevices.getUserMedia(constraints)
-	  //audio: true,
-	  //video: true,
+	navigator.mediaDevices.getUserMedia({
+	  audio: true,
+	  video: true,
 	  //constraints: true;
 	  //facingMode: "environment",
-	.then(stream => {
+	}).then(stream => {
 	  videoElement = document.createElement('video');
 	  videoElement.srcObject = stream;
 	  videoElement.muted = true;
