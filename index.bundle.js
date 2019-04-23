@@ -61,8 +61,7 @@
 	let videoElement;
 	navigator.mediaDevices.getUserMedia({
 	  audio: true,
-	  video: {facingMode: "environment"
-	};
+	  video: {facingMode: "environment"},
 	  //constraints: true;
 	  //facingMode: "environment",
 	}).then(stream => {
