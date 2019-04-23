@@ -116,14 +116,16 @@
 	  return Math.sqrt(Math.pow(point2[0] - point1[0], 2) + Math.pow(point2[1] - point1[1], 2));
 	}
 	
-	function face(videoElement, canvas, faceFilter) {
+	//function face(videoElement, canvas, faceFilter) {
+	function face(videoElement, canvas) {
+	  let ctx;
 	  let ctx;
 	  let stopped = false;
 	
-	  if (!ctracker) {
-	    ctracker = new Tracker();
-	    ctracker.init(pModel);
-	    ctracker.start(videoElement);
+	  //if (!ctracker) {
+	  //  ctracker = new Tracker();
+	  //  ctracker.init(pModel);
+	  //  ctracker.start(videoElement);
 	  }
 	
 	  // Draws a frame on the specified canvas after applying the selected filter every
@@ -138,11 +140,11 @@
 	      videoElement.height = canvas.height; // eslint-disable-line no-param-reassign
 	    }
 	    ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-	    if (faceFilter) {
-	      faceFilter(ctracker.getCurrentPosition());
-	    } else {
-	      ctracker.draw(canvas);
-	    }
+	    //if (faceFilter) {
+	    //  faceFilter(ctracker.getCurrentPosition());
+	    ////} else {
+	    //  ctracker.draw(canvas);
+	    //}
 	    if (!stopped) {
 	      requestAnimationFrame(drawFrame);
 	    } else {
