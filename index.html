@@ -1,123 +1,89 @@
-<!DOCTYPE html>
-<html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
-    <title>Snapchat Killer</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>tracking.js - face tracking fish tank</title>
+  <link rel="stylesheet" href="demo.css">
 
-    <style media="screen">
-      body {
-        background-color: #262422;
-        color: #DCD9CD;
-        padding: 0;
-        margin: 0;
+  <script src="tracking-min.js"></script>
+  <script src="face-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/103/three.module.js"></script>
+  <script src="FishTankRenderer.js"></script>
+
+  <style>
+  body {
+    overflow: hidden;
+  }
+
+  #video, #canvas {
+    bottom: 0;
+    position: absolute;
+    z-index: 100;
+  }
+
+  #viewport {
+    padding-top: 40px;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="demo-title">
+    <p><a href="http://trackingjs.com" target="_parent">tracking.js</a> － get user's webcam and detect faces to control the scene</p>
+  </div>
+
+  <div id="viewport">
+    <video id="video" width="320" height="240" preload autoplay loop muted></video>
+    <canvas id="canvas" width="320" height="240"></canvas>
+  </div>
+
+  <script>
+    var viewport = document.getElementById('viewport');
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+
+    var fishTankRenderer = new FishTankRenderer();
+    fishTankRenderer.init(viewport);
+
+    var faceX = 0;
+    var faceY = 0;
+
+    var tracker = new tracking.ObjectTracker('face');
+    tracker.setInitialScale(4);
+    tracker.setStepSize(2);
+
+    tracking.track('#video', tracker, { camera: true });
+
+    tracker.on('track', function(event) {
+      var maxRectArea = 0;
+      var maxRect;
+
+      event.data.forEach(function(rect) {
+        if (rect.width * rect.height > maxRectArea){
+          maxRectArea = rect.width * rect.height;
+          maxRect = rect;
+        }
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.strokeStyle = 'magenta';
+        context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+        context.font = '11px Helvetica';
+        context.fillStyle = "#fff";
+        context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+        context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+      });
+
+      if(maxRectArea > 0) {
+        var rectCenterX = maxRect.x + (maxRect.width/2);
+        var rectCenterY = maxRect.y + (maxRect.height/2);
+        faceX = (rectCenterX - 160) * (window.innerWidth/320) * 50;
+        faceY = (rectCenterY - 120) * (window.innerHeight/240) * 50;
       }
-      canvas {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin: 0;
-        padding: 0;
-        object-fit: cover;
-        transform: scaleX(-1);
-      }
-    </style>
-    <link rel="stylesheet" href="ionicons.min.css">  <!--css/ionicons.min.css-->
-  <style type="text/css">div#captureBtn {
-  width: 40px;
-  height: 40px;
-  border: 5px solid white;
-  border-radius: 50%;
-  background: none;
-  position: absolute;
-  left: calc(50% - 25px);
-  bottom: 50px;
-  z-index: 9;
-  cursor: pointer;
-}
 
-div.recordingAnimation {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  left: calc(50% - 35px);
-  bottom: 40px;
-  z-index: 8;
-}
-</style><style type="text/css">div.container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 9;
-}
+      fishTankRenderer.render(faceX, faceY);
+    });
+  </script>
 
-i.closeButton {
-  color: white;
-  font-size: 20pt;
-  text-shadow: 0 0 2px black;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-  cursor: pointer;
-}
-
-i.downloadButton {
-  color: white;
-  font-size: 20pt;
-  text-shadow: 0 0 2px black;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  z-index: 10;
-  cursor: pointer;
-}
-</style><style type="text/css">img.captureImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scaleX(-1);
-}
-</style><style type="text/css">video.captureVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scaleX(-1);
-}
-</style><style type="text/css">.filterPicker {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 9;
-  width: 50px;
-  height: 100%;
-}
-
-.filterOption {
-  width: 50px;
-  height: 50px;
-  border: 2px solid white;
-  border-radius: 50%;
-  color: white;
-  text-shadow: 0 0 2px black;
-  margin: 5px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.filterOption span {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: 48px;
-}
-</style></head>
-  <body>
-   <canvas width="11px" height="781px" id="renderCanvas" style="display:none;"></canvas>
-    <div id="publisher"></div>
-    <script src="index.bundle.js" charset="utf-8" ></script>
-  
-
-<div class="filterPicker"><div class="filterOption"><span>none</span></div><div class="filterOption"><span>red</span></div><div class="filterOption"><span>green</span></div><div class="filterOption"><span>blue</span></div><div class="filterOption"><span>grayscale</span></div><div class="filterOption"><span>blur</span></div><div class="filterOption"><span>sketch</span></div><div class="filterOption"><span>invert</span></div><div class="filterOption"><span>face</span></div><div class="filterOption"><span>glasses</span></div></div><canvas width="640" height="480"></canvas><div id="captureBtn"></div></body></html>
+</body>
+</html>
