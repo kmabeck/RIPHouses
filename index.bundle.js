@@ -50,7 +50,7 @@
 	// A real app would use require('opentok-filters/src/filters.js');
 	const filters = __webpack_require__(1);
 	//var constraints = { video: { facingMode: "environment" }, audio: false };
-	var constraints = { video: { facingMode: "user"}};
+	//var constraints = { video: { facingMode: "environment"}};
 	
 					   
 	const captureButton = __webpack_require__(6);
@@ -61,8 +61,9 @@
 	let videoElement;
 	navigator.mediaDevices.getUserMedia({
 	  audio: true,
-	  video: true,
-	  constraints: true;
+	  video: {facingMode: "environment"
+	};
+	  //constraints: true;
 	  //facingMode: "environment",
 	}).then(stream => {
 	  videoElement = document.createElement('video');
