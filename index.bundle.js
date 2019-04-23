@@ -209,7 +209,8 @@
 	  glasses: (videoElement, canvas) => {
 	    let image;
 	    let ctx;
-	    return face(videoElement, canvas, positions => {
+	    return face(videoElement, canvas => {
+			//return face(videoElement, canvas, positions => {
 	      if (!ctx) {
 	        ctx = canvas.getContext('2d');
 	      }
