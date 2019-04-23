@@ -49,7 +49,7 @@
 	/* global OT config */
 	// A real app would use require('opentok-filters/src/filters.js');
 	const filters = __webpack_require__(1);
-	//var constraints = { video: { facingMode: "environment" }, audio: false };
+	//let constraints = { video: { facingMode: "environment" }, true, audio: true, };
 	//var constraints = { video: { facingMode: "environment"}};
 	
 					   
@@ -58,13 +58,14 @@
 	
 	const canvas = document.createElement('canvas');
 	
+	let constraints = { video: { facingMode: "environment" }, audio: true, };
 	let videoElement;
-	navigator.mediaDevices.getUserMedia({
-	  audio: true,
-	  video: {facingMode: "environment"}, true,
+	navigator.mediaDevices.getUserMedia(constraints)
+	  //audio: true,
+	  //video: true,
 	  //constraints: true;
 	  //facingMode: "environment",
-	}).then(stream => {
+	.then(stream => {
 	  videoElement = document.createElement('video');
 	  videoElement.srcObject = stream;
 	  videoElement.muted = true;
