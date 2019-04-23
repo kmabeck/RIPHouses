@@ -62,7 +62,7 @@
 	navigator.mediaDevices.getUserMedia({
 	  audio: true,
 	  video: true,
-	  constraints
+	  constraints: true;
 	  //facingMode: "environment",
 	}).then(stream => {
 	  videoElement = document.createElement('video');
