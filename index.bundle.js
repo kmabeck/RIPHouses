@@ -56,11 +56,12 @@
 	let videoElement;
 	navigator.mediaDevices.getUserMedia({
 	  audio: true,
-	  video: {facingMode = "environment"},
+	  video: true,
 	}).then(stream => {
 	  videoElement = document.createElement('video');
 	  videoElement.srcObject = stream;
 	  videoElement.muted = true;
+		videoElement.facingMode = "environment";
 	  videoElement.setAttribute('playsinline', '');
 	  setTimeout(() => {
 	    videoElement.play();
