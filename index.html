@@ -14,7 +14,7 @@
 </div>
 
 <button id="trigger" onclick="javascript:generateScreenshot()">Copy Image</button>
-	<div><img src="" id="screenshot">
+	<div id="canvas"><img src="" id="screenshot">
 	<i class="closeButton ion-close-round"></i>
 	<i class="downloadButton ion-ios-download-outline"></i>
 	
@@ -106,7 +106,7 @@
 }
 	
 	const close = () => {
-    appendTo.removeChild(screenshot);
+    appendTo.removeChild(canvas);
   };
   const closeButton = document.createElement('i');
   closeButton.className = 'closeButton ion-close-round';
