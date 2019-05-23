@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<div id="capture">
+    
+    <img src="BeaconHill.png" width="60%">
+</div>
+
+<button id="trigger" onclick="javascript:generateScreenshot()">Copy Image</button>
+	<div><img src="" id="screenshot"></div>
+<style>
+	#trigger{
+    width: 200px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 100px);*/
+	z-index: 200;
+}
+	#target{
+	background: #f5da55;	
+	}
+	#screenshot{
+		position: absolute;
+		z-index: 200;
+		width: 80%;
+		
+	}
+	</style>
+<script src="html2canvas.min.js"></script> <!--
+<script>
+	window.takeScreenShot = function() {
+    html2canvas(document.getElementById("target"), {
+        onrendered: function (canvas) {
+            document.body.appendChild(canvas);
+        },
+        width:800,
+        height:400,
+		
+    });
+}
+	</script>
+</body> -->
+<script>function generateScreenshot() {
+    document.getElementById("trigger").focus();
+    setTimeout(() => {
+    html2canvas(document.getElementById('capture'), {
+            logging: true,
+            profile: true,
+            useCORS: true}).then(function(canvas) {
+        var data = canvas.toDataURL('image/jpeg', 0.9);
+        var src = encodeURI(data);
+        document.getElementById('screenshot').src = src;
+        document.getElementById('size').innerHTML = src.length + ' bytes';
+    }); }, 1000);
+}
+</script>
+</html>
