@@ -14,7 +14,7 @@
 
 <button id="trigger" onclick="javascript:generateScreenshot()">Copy Image</button>
 	<div><img src="" id="screenshot">
-	<button type="button" onclick="javascript:window.close()">X</button>
+	<button id="close" type="button">x</button>
 	</div>
 <style>
 	#trigger{
@@ -33,7 +33,8 @@
 	z-index: 200;
 }
 	#capture{
-	background: #f5da55;	
+	background: #f5da55;
+	
 	}
 	#screenshot{
 		position: absolute;
@@ -43,10 +44,22 @@
 		width: 80%;
 		display: block;
    		left: 10%;
+		display: none;
+	}
+	#close{
+	position: absolute; 
+	top: 20px; 
+	right: 30px; 
+	transition: all 200ms;
+    font-size: 30px; 
+	font-weight: bold; 
+	color: #333;
 	}
 	
 	</style>
-<script src="html2canvas.min.js"></script> <!--
+<script src="html2canvas.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <!--
 <script>
 	window.takeScreenShot = function() {
     html2canvas(document.getElementById("target"), {
@@ -73,5 +86,26 @@
         document.getElementById('size').innerHTML = src.length + ' bytes';
     }); }, 1000);
 }
+	$(function () {
+
+$('trigger').click(function () {
+
+$('close').show();
+
+$('trigger').hide();
+
+});
+
+$('close').click(function () {
+
+$('close').hide();
+
+$('trigger').show();
+
+});
+
+});
+
+
 </script>
 </html>
