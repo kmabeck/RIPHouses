@@ -13,7 +13,9 @@
 </div>
 
 <button id="trigger" onclick="javascript:generateScreenshot()">Copy Image</button>
-	<div><img src="" id="screenshot"></div>
+	<div><img src="" id="screenshot">
+	<button type="button" onclick="javascript:window.close()">X</button>
+	</div>
 <style>
 	#trigger{
     width: 200px;
@@ -27,7 +29,7 @@
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: absolute;
     bottom: 30px;
-    left: calc(50% - 100px);*/
+    left: calc(50% - 100px);
 	z-index: 200;
 }
 	#capture{
@@ -36,9 +38,11 @@
 	#screenshot{
 		position: absolute;
 		z-index: 200;
-		box-shadow: 5px 5px 5px grey;
+		box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
 		top: 30px;
-    	left: calc(50% - 100px);*/
+		width: 80%;
+		display: block;
+   		left: 10%;
 	}
 	
 	</style>
