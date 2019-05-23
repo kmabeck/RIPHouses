@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Name of your awesome camera app -->
+    <title>Camera App</title>
+    <!-- Link to your main style sheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+   <div id="capture" >
+
+    <main id="camera">
+        <!-- Camera sensor --
+        <canvas id="camera--sensor"></canvas>
+        <!-- Camera view -->
+        <video id="camera--view" autoplay playsinline></video>
+        <!-- Camera output --
+        <img src="//:0" alt="" id="camera--output">
+        <!-- Camera trigger -->
+        
+    </main>
+   <!-- Swipe View -->
+   <div class="swipeView">
+  <section class="green">
+    <img class="greenimg" src = "Building_white.png">
+  </section>
+  <!--<section class="purple">
+    <img class="purpimg" src="Building3_white.png">
+  </section>
+  <section class="orange">
+     <div id="form">
+     <iframe id="questions" src="https://docs.google.com/forms/d/e/1FAIpQLSfieQifhpDFWWU0Udgx56izUwZcq5o33kEo0meH9aV81fx6dA/viewform?embedded=true"  height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+     </div>
+  </section>-->
+</div>
+
+</div>
+  
+   <button id="trigger" onclick="javascript:generateScreenshot()">Copy Image</button>
+	<div><img src="" id="screenshot"></div>
+   
+    <!-- Reference to your JavaScript file -->
+    <script src="app.js"></script>
+    <script src="html2canvas.min.js"></script>
+    <script>
+	function generateScreenshot() {
+    document.getElementById("trigger").focus();
+    setTimeout(() => {
+    html2canvas(document.getElementById('capture'), {
+            logging: true,
+            profile: true,
+            useCORS: true}).then(function(canvas) {
+        var data = canvas.toDataURL('image/jpeg', 0.9);
+        var src = encodeURI(data);
+        document.getElementById('screenshot').src = src;
+        
+    }); }, 1000);
+}
+	</script>
+</body>
+</html>
