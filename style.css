@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* CSS Document */
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+	align-content: center;
+}
+#dimScreen{
+	position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.50);
+	z-index: 100;
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#trigger{
+    width: 200px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 100px);*/
+	z-index: 200;
+}
+#screenshot{
+		position: absolute;
+		z-index: 250;
+		box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+		top: 30px;
+		width: 80%;
+		height: auto;
+		display: block;
+   		left: 10%;
+	}
+.taken{
+    height: 100px!important;
+    width: 100px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 200;
+}
+.swipeView {
+  display: grid;
+  grid-template-columns: repeat(4, 100%);
+  will-change: transform;
+  align-content: center;
+  overflow-x: auto;
+  scroll-snap-coordinate: 0 0;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  z-index: 1;
+}
+
+section {
+  height: 90vh;
+  scroll-snap-align: start;
+}
+
+.green {
+  /*background: #ABE66F; */
+  
+  z-index: 100;
+	
+}
+.greenimg{
+	width: 80%;
+	
+}
+
+.purple {
+  /*background: #4E4E94; */
+	
+  z-index: 100;
+}
+.purpimg{
+	width: 80%;
+}
+.orange {
+  background: #FD8F58;
+}
+.form{
+	width: 80%;
+}
