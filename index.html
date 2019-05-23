@@ -102,12 +102,12 @@
 }
 	
 	const close = () => {
-    appendTo.removeChild(container);
+    appendTo.removeChild(screenshot);
   };
   const closeButton = document.createElement('i');
   closeButton.className = 'closeButton ion-close-round';
   closeButton.addEventListener('click', close);
-  container.appendChild(closeButton);
+  screenshot.appendChild(closeButton);
 
   const download = () => {
     if (captured) {
