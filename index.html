@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 
 <body>
@@ -14,8 +15,13 @@
 
 <button id="trigger" onclick="javascript:generateScreenshot()">Copy Image</button>
 	<div><img src="" id="screenshot">
-	<button id="close" type="button" href="#">X</button>
+	<i class="closeButton ion-close-round"></i>
+	<i class="downloadButton ion-ios-download-outline"></i>
+	
 	</div>
+	
+</body>
+
 <style>
 	#trigger{
     width: 200px;
@@ -44,18 +50,30 @@
 		display: block;
    		left: 10%;
 	}
-	#close{
-	position: absolute; 
-	top: 20px; 
-	right: 30px; 
-	transition: all 200ms;
-    font-size: 30px; 
-	font-weight: bold; 
-	color: #333;
+	i.closeButton {
+  color: white;
+  font-size: 20pt;
+  text-shadow: 0 0 2px black;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  cursor: pointer;
 	}
-	
+	i.downloadButton{
+  color: white;
+  font-size: 20pt;
+  text-shadow: 0 0 2px black;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
+  cursor: pointer;	
+	}
 	</style>
-<script src="html2canvas.min.js"></script> <!--
+<script src="html2canvas.min.js"></script>
+
+  <!--
 <script>
 	window.takeScreenShot = function() {
     html2canvas(document.getElementById("target"), {
@@ -82,5 +100,32 @@
         document.getElementById('size').innerHTML = src.length + ' bytes';
     }); }, 1000);
 }
+	
+	const close = () => {
+    appendTo.removeChild(container);
+  };
+  const closeButton = document.createElement('i');
+  closeButton.className = 'closeButton ion-close-round';
+  closeButton.addEventListener('click', close);
+  container.appendChild(closeButton);
+
+  const download = () => {
+    if (captured) {
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = captured.getAttribute('src');
+      a.download = `snap.${captured.tagName === 'IMG' ? 'png' : 'webm'}`;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+      }, 100);
+    }
+  };
+  const downloadButton = document.createElement('i');
+  downloadButton.className = 'downloadButton ion-ios-download-outline';
+  downloadButton.addEventListener('click', download);
+  container.appendChild(downloadButton);
 </script>
+	
 </html>
