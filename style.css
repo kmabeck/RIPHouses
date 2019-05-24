@@ -100,9 +100,9 @@ section {
 .purpimg{
 	width: 80%;
 }
-.orange {
-  background: #FD8F58;
+
 }
 .form{
 	width: 80%;
+	left: calc(50% - 100px);
 }
