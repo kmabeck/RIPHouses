@@ -1,0 +1,190 @@
+/* Scss Document */
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+	align-content: center;
+}
+#dimScreen{
+	position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.50);
+	z-index: 150;
+}
+	.dot{
+	position: absolute;
+    padding:0;
+    margin:0;
+
+    top:90%;
+    left:20px;
+
+    
+    height: 10%;
+    
+	z-index: 220;
+		
+	}	
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#trigger{
+    width: 150px;
+    background-color: #ff9900;
+    color: white;
+    font-size: 16px;
+	font-weight: bold;
+    border-radius: 100px;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 100px);
+	z-index: 200;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+.taken{
+    height: 100px!important;
+    width: 100px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 250;
+}
+.directions{
+  background-color: #3cbdb2;
+  position: absolute;
+  top: 30%;
+  height: auto;
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+  left: 20%;
+  z-index: 250;
+	
+	}
+.directions1{
+  background-color: #3cbdb2;
+  position: absolute;
+  top: 70%;
+  height: auto;
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+  float: left;
+  right: 40px;
+  z-index: 250;
+}
+.directions2{
+  background-color: #3cbdb2;
+  position: absolute;
+  top: 70%;
+  height: auto;
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+  float: right;
+  left: 40px;
+  z-index: 250;
+}
+paragraph{
+	color: white;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	text-align: center;
+	}
+.swipeView {
+  display: grid;
+  grid-template-columns: repeat(10, 100%);
+  will-change: transform;
+  align-content: center;
+  overflow-x: auto;
+  scroll-snap-coordinate: 0 0;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  z-index: 250;
+
+
+}
+
+	section{
+	height: 90vh;
+  scroll-snap-align: start;
+  width: 375px;
+  position: relative;	
+	}
+/*.Routines2, .Details2, .Faves2 {
+  height: 90vh;
+  scroll-snap-align: start;
+  width: 375px;
+  position: relative;
+	}
+
+.Faves, .popup, .SHolgate, .SHolgate2, .Details, .Routines, .LinkPage {
+  height: 100vh;
+  scroll-snap-align: start;
+  width: 375px;
+  position: relative;
+} */
+.img1{
+	width: 100%;
+	float: right;
+}
+.SHolgate2 {
+  /*background: #ABE66F; */
+  
+ 
+	
+}
+.img2{
+	width: 100%;
+	float: left;
+}
+.Faves{
+	position: relative;
+	}
+.img3{
+	width: 100%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img4{
+	width: 100%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img5{
+	width: 100%;
+	vertical-align: middle;
+}
+.img6{
+	width: 100%;
+	vertical-align: middle;
+}
+.img7{
+	width: 100%;
+	vertical-align: middle;
+}
+.img8{
+	width: 100%;
+	vertical-align: middle;
+}
+
