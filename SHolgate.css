@@ -7,7 +7,7 @@ html, body{
 	align-content: center;
 }
 #dimScreen{
-	position:fixed;
+ position:fixed;
     padding:0;
     margin:0;
 
@@ -17,7 +17,7 @@ html, body{
     width: 100%;
     height: 100%;
     background:rgba(0,0,0,0.50);
-	z-index: 150;
+   z-index: 150;
 }
 	.dot{
 	position: absolute;
@@ -44,17 +44,17 @@ html, body{
     background-color: #ff9900;
     color: white;
     font-size: 16px;
-	font-weight: bold;
+    font-weight: bold;
     border-radius: 100px;
     border: none;
     padding: 15px 15px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: absolute;
-    bottom: 30px;
-    left: calc(50% - 100px);
-	z-index: 200;
-	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    top: 90%;
+    left:25%;
+    z-index: 200;
+    font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 }
 .taken{
     height: 100px!important;
