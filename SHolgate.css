@@ -44,7 +44,7 @@ html, body{
     height: 100%;
     width: 100%;
     object-fit: cover;	
-    z-index: 300;
+    z-index: 270;
 }
 #trigger{
     width: 150px;
@@ -71,7 +71,7 @@ html, body{
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     top: 20px;
     right: 20px;
-    z-index: 300;
+    z-index: 270;
 }
 .directions{
   background-color: #3cbdb2;
