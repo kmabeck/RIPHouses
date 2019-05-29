@@ -19,16 +19,16 @@ html, body{
     background:rgba(0,0,0,0.50);
    z-index: 150;
 }
-	.dot{
-	position: absolute;
-    padding:0;
-    margin:0;
+.dot{
+   position: absolute;
+   padding:0;
+   margin:0;
 
-    top:90%;
-    left:20px;
+   top:90%;
+   left:15%;
 
     
-    height: 10%;
+   height: 10%;
     
 	z-index: 220;
 		
@@ -58,8 +58,8 @@ html, body{
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: absolute;
-    top: 90%;
-    left: 25%;
+    top: 720px;
+    left: 100px;
     z-index: 300;
     font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 }
