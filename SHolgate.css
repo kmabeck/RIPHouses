@@ -91,11 +91,12 @@ html, body{
   top: 70%;
   height: auto;
   padding: 10px;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   float: left;
   right: 40px;
   z-index: 250;
+  font-size: 12px;
 }
 .directions2{
   background-color: #3cbdb2;
@@ -103,11 +104,12 @@ html, body{
   top: 70%;
   height: auto;
   padding: 10px;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   float: right;
   left: 40px;
   z-index: 250;
+  font-size: 12px;
 }
 paragraph{
 	color: white;
