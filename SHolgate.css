@@ -55,9 +55,9 @@ html, body{
     padding: 15px 15px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: absolute;
-    top: 600px;
-    left: 100px;
+    position: fixed;
+    top: 90%;
+    left: 20%;
     z-index: 300;
     font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 }
