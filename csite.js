@@ -24,11 +24,11 @@ var n = 1;
 
 function changeImage() {
   if ( n == 0 ) {
-    document.images["home"].src = "OldBoylston47.gif";
+    document.images["home"].src = "https://kmabeck.github.io/RIPHouses/OldBoylston47.gif";
     n = 1;
   }
   else if ( n == 1 ) {
-    document.images["home"].src = "NewBoylston4.gif";
+    document.images["home"].src = "https://kmabeck.github.io/RIPHouses/NewBoylston4.gif";
     n = 0;
   }
   // else {
