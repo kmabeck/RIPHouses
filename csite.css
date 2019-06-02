@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/* CSS Document */
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+	align-content: center;
+}
+#dimScreen{
+	position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.50);
+	z-index: 100;
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#camera--trigger{
+    width: 200px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: relative;
+    /*bottom: 30px;
+    left: calc(50% - 100px);*/
+	z-index: 200;
+}
+img{
+	background-color: transparent;
+	border: none;
+	/*height: 90%;*/
+}
+#video_overlays {
+ position: absolute;
+  
+  padding-bottom: 70px;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 150;
+}
+
+#form{
+	position:relative;
+	width: 100%;
+	display: inline-block;
+	/*top: 800px; 
+	width: 70%;*/
+	
+	z-index: 150;
+	top: 98%;
+	
+}
+
+
+@media only screen and (orientation:portrait){
+
+	#overhead{
+		height: 100%;
+		width: 100%;
+	}
+	
+  #video_overlays {
+
+    width: 100%;
+	height: 60%;
+	vertical-align: center;
+	
+	
+
+    /*-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);*/
+
+  }
+	#home{
+		width: 100%;
+		padding-top: 50px;
+		
+	}
+ 
+	
+  #camera--trigger {
+	left: 40%;
+	
+	height: 80px;
+	width: 80px;
+	font-size: 12px;
+	padding: 5px 5px;
+
+  }
+	#form{
+	
+	position:relative;
+	top: 400px;
+	width: 100%;
+	
+	
+	}
+	#carrot{
+		padding-left: 28%;
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	#questions{
+		padding-left: 10%;
+	}
+	
+}
+
+@media only screen and (orientation:landscape){
+
+  #video_overlays  {
+
+    width: 100%;
+	  top: 5%;
+	  left: 30%;
+	
+	padding-bottom: 50px;
+	
+
+
+  }
+	#home{
+		width: 60%;
+	}
+
+  #camera--trigger {
+	left: 10%;
+	top: -40%;
+	height: 80px;
+	width: 80px;
+	font-size: 12px;
+	padding: 5px 5px;
+	
+}
+	/*img{
+		left: 5%;
+	}*/
+	
+	#form{
+	width: 100%;
+	padding-left: 25%;
+	position:relative;
+	top: 200px;*/
+	padding-top: 60px;
+		
+	align-content: center;
+		
+	
+		
+	}
+	#questions{
+		width: 90%;
+		
+	}
+	#carrot{
+		padding-left: 35%;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		
+		
+	}
+
+}
+
+
